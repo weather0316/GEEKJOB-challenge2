@@ -13,7 +13,7 @@
     </head>
     <body>
         <%
-            char Lun='な';
+            char Lun='あ';
            
           switch(Lun){
               case 'A':
