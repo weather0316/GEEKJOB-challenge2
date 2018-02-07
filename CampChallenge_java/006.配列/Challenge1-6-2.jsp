@@ -26,8 +26,7 @@
           datas.add("END"); 
 
          datas.set(2,"33");
-         
-out.print(datas.get(2));
+
 
         %>
     </body>
