@@ -15,23 +15,15 @@
        <%@ page import="java.util.*" %>
        
        <%
-       HashMap<String,String> data1=new HashMap<String,String>();
-       HashMap<String,String> data2=new HashMap<String,String>(); 
-       HashMap<String,String> data3=new HashMap<String,String>();
-       HashMap<String,String> data4=new HashMap<String,String>();
+       HashMap<String,String> data=new HashMap<String,String>();
+       
             
             
-            data1.put("1","AAA");
-            data2.put("hello","world");
-            data3.put("soeda","33");
-            data4.put("20","20");
+            data.put("1","AAA");
+            data.put("hello","world");
+            data.put("soeda","33");
+            data.put("20","20");
             
-            ArrayList<HashMap> data = new ArrayList<HashMap>();
-                    
-           data.add(data1);
-           data.add(data2);
-           data.add(data3);
-           data.add(data4);
             %>
     </body>
 </html>
