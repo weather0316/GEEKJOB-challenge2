@@ -15,10 +15,12 @@
         <%
        String suji="A";
        
-       for(int i=0;i<=30;i++){
+       for(int i=0;i<29;i++){
 
+        suji=suji+"A";
            
        }
+       out.print(suji);
           
          %>
     </body>
