@@ -17,28 +17,25 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class Challenge15 extends HttpServlet {
 
-   
-
     String[] profile(String ID) {
 
-    String[] data1 = {"83726519", "1972年6月5日<br>", "アメリカ<br>"};
-    String[] data2 = {"61205537", "1920年5月13日<br>", "イタリア<br>"};
-    String[] data3 = {"83528475", "1985年4月16日<br>", null};
-    
-      if(ID=="83726519"){
-          
-          return data1;
-          
-      }else if(ID=="61205537"){
-          
-          return data2;
-           
-      }else{
-          
-          return data3;
-      }
+        String[] data1 = {"83726519", "1972年6月5日<br>", "アメリカ<br>"};
+        String[] data2 = {"61205537", "1920年5月13日<br>", "イタリア<br>"};
+        String[] data3 = {"83528475", "1985年4月16日<br>", null};
 
-        
+        if (ID == "83726519") {
+
+            return data1;
+
+        } else if (ID == "61205537") {
+
+            return data2;
+
+        } else {
+
+            return data3;
+        }
+
     }
 
     /**
@@ -55,33 +52,40 @@ public class Challenge15 extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
 
-            String[] a = profile("83726519");
-
-            String[] b = profile("61205537");
-
-            String[] c = profile("83528475");
+            String ID = "83726519";
             
+           
 
-            for(int i=1; i < 3; i++) {
-
-                out.print(a[i]);
-                                              
-            }
             
-            for(int i=1; i < 3; i++){
-                  out.print(b[i]);
+            int limit = 2;
+
+            for (int i = 1; i <=limit; i++) {
+
+                 String[] a = profile(ID);
+
+                for (int e = 1; e < 3; e++) {
+
+                    if(a[i]==null){ 
+
+
+ 
+                     continue; }
+                    
+                    out.print(a[e]);
+
+                    
+                }
+                if(ID=="83726519"){
+                     ID = "61205537";
+                }else if(ID=="61205537")
+                {
+                        ID = "83528475";
+                }
                
             }
-            for(int i=1; i < 3; i++){
-                
-                if(c[i]==null){
-                    continue;
-                }
-                
-                out.print(c[i]);
-            }
-
+               
         }
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
