@@ -17,26 +17,28 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class Challenge15 extends HttpServlet {
 
-    String[] data1 = {"83726519", "1972年6月5日<br>", "アメリカ"};
-    String[] data2 = {"61205537", "1920年5月13日<br>", "イタリア"};
-    String[] data3 = {"83528475", "1985年4月16日<br>", null};
+   
 
     String[] profile(String ID) {
 
-        if (ID.equals(data1[0])) {
+    String[] data1 = {"83726519", "1972年6月5日<br>", "アメリカ<br>"};
+    String[] data2 = {"61205537", "1920年5月13日<br>", "イタリア<br>"};
+    String[] data3 = {"83528475", "1985年4月16日<br>", null};
+    
+      if(ID=="83726519"){
+          
+          return data1;
+          
+      }else if(ID=="61205537"){
+          
+          return data2;
+           
+      }else{
+          
+          return data3;
+      }
 
-            return data1;
-
-        } else if (ID.equals(data2[0])) {
-
-            return data2;
-
-        } else {
-
-            return data3;
-
-        }
-
+        
     }
 
     /**
@@ -53,20 +55,32 @@ public class Challenge15 extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
 
-            String[] p = profile("83528475");
+            String[] a = profile("83726519");
 
-            for (int i = 1; i < 3; i++) {
+            String[] b = profile("61205537");
 
-               
-                if (p[i] == null) {
-                    continue;
-                    
-                    
-                }
-                 out.print(p[i]);
+            String[] c = profile("83528475");
+            
 
+            for(int i=1; i < 3; i++) {
 
+                out.print(a[i]);
+                                              
             }
+            
+            for(int i=1; i < 3; i++){
+                  out.print(b[i]);
+               
+            }
+            for(int i=1; i < 3; i++){
+                
+                if(c[i]==null){
+                    continue;
+                }
+                
+                out.print(c[i]);
+            }
+
         }
     }
 
