@@ -20,7 +20,6 @@
             out.print(request.getParameter("gendar"));
             out.print("<br>趣味:");
             out.print(request.getParameter("hobby"));
-           
             %>
     </body>
 </html>
